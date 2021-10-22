@@ -21,20 +21,10 @@ public class C02_WebTables {
         qaConcortPage.hotelManagementLİnk.click();
         qaConcortPage.hotelRoomsLink.click();
 
+
         //● table() metodu oluşturun
         // ○ Tüm table body’sinin boyutunu(sutun sayisi) bulun. /tbody
         System.out.println("Tablodaki sutun sayisi "+qaConcortPage.basliklarListesi.size());
-
-
-        // ○ Table’daki tum body’I ve başlıkları(headers) konsolda yazdırın.
-        System.out.println("**********"+qaConcortPage.tBodyTumu.getText());
-// Eger tum tablo body'sini hucrelere ayirmadan tek bir String olarak gormek istersek
-// tum body'i tek bir Webelement olarak locate edebiliriz
-// Bu yaklasim, tabloda HAPPY HOTEL var mi gibi sorular icin ideal bir cozum olur
-
-        Thread.sleep(1000);
-
-        Assert.assertTrue(qaConcortPage.tBodyTumu.getText().contains("HAPPY HOTEL"));
 
 
 
@@ -60,6 +50,18 @@ public class C02_WebTables {
         for (WebElement each: qaConcortPage.dordoncuSutunListesi) {
             System.out.println(each.getText());
         }
+
+        // ○ Table’daki tum body’I ve başlıkları(headers) konsolda yazdırın.
+        System.out.println("**********"+qaConcortPage.tBodyTumu.getText());
+// Eger tum tablo body'sini hucrelere ayirmadan tek bir String olarak gormek istersek
+// tum body'i tek bir Webelement olarak locate edebiliriz
+// Bu yaklasim, tabloda HAPPY HOTEL var mi gibi sorular icin ideal bir cozum olur
+
+        Thread.sleep(1000);
+
+        Assert.assertTrue(qaConcortPage.tBodyTumu.getText().contains("HAPPY HOTEL"));
+
+
 
         Driver.closeDriver();
     }

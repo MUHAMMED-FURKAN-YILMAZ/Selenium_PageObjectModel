@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -103,6 +104,18 @@ public class QAConcortPage {
     @FindBy(xpath = "//tbody//tr//td[4]")
     public List<WebElement> dordoncuSutunListesi;
 
+    @FindBy(xpath="//table//tr[4]")
+    public WebElement dorduncuSatir;
+
+    @FindBy(xpath = "//tbody//tr//td")
+    public List<WebElement> tablodakiTumTdList;
+
+    @FindBy(xpath = "//table//th")
+    public List<WebElement> tablodakiTumThList;
+
+    @FindBy(xpath = "//tbody//tr/td[5]")
+    public List<WebElement> besinciSutunListesi;
+
 
     public void concortHotelLogin(){
         Driver.getDriver().get(ConfigReader.getProperty("CHQAUrl"));
@@ -111,6 +124,18 @@ public class QAConcortPage {
         qaConcortPage.userNameBox.sendKeys(ConfigReader.getProperty("CHQAValidUsername"));
         qaConcortPage.passwordBox.sendKeys(ConfigReader.getProperty("CHQAValidPassword"));
         qaConcortPage.logInButton.click();
+    }
+
+    public String printData(int satir, int sutun) {
+    // ornekteki haliyle 3. satir, 5. sutundaki elemani yazdiralim
+    // String xpath= //tbody//tr[3]//td[5]
+    String xpath= "//tbody//tr["+satir+"]//td["+sutun+"]";
+
+    //@FindBy notasyonu parametreli calismadigi icin onceki yontemle locate edelim
+        String istenenData = Driver.getDriver().findElement(By.xpath(xpath)).getText();
+        System.out.println("Satir no: "+satir+", sutun no: "+sutun+"'deki data: "+istenenData);
+
+        return istenenData;
     }
 
 }
