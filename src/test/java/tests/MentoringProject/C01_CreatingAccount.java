@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import utilities.Driver;
 
-public class C01_ {
+public class C01_CreatingAccount {
     /**
      * Part 1:
      *  Open "https://courses.ultimateqa.com/users/sign_up"

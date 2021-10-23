@@ -129,7 +129,7 @@ public class QAConcortPage {
     public String printData(int satir, int sutun) {
     // ornekteki haliyle 3. satir, 5. sutundaki elemani yazdiralim
     // String xpath= //tbody//tr[3]//td[5]
-    String xpath= "//tbody//tr["+satir+"]//td["+sutun+"]";
+         String xpath= "//tbody//tr["+satir+"]//td["+sutun+"]";
 
     //@FindBy notasyonu parametreli calismadigi icin onceki yontemle locate edelim
         String istenenData = Driver.getDriver().findElement(By.xpath(xpath)).getText();

@@ -3,11 +3,7 @@ package tests.day17_ExcelAutomation;
 import org.apache.poi.ss.usermodel.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import utilities.ConfigReader;
-
 import java.io.FileInputStream;
-
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.*;
 
@@ -66,7 +62,7 @@ public class C01_ReadExcel {
 
         //secilen hucredeki yazinin Luanda oldugunu test edin
 
-        //Assert.assertEquals(cell, "Luanda");
+        //Assert.assertEquals(cell, "Luanda");//-> false
 // cell'in data type'i -> Cell
 // Luanda ise -> String
 //Data type'lari farkli oldugu icin bu ikisi equal olamaz
@@ -83,6 +79,8 @@ public class C01_ReadExcel {
 
 
 // getLastRowNum() bize son satirin index'ini verir
+// getFirstRowNum() bize calisan ilk satirin index'ini verir
+        // kullanilan ilk veya son satir yoksa bize index olarak -1 dondurur.
 // getPhysicalNumberOfRows() fiili olarak kullanilan satir sayisini verir
         System.out.println(workbook.getSheet("Sayfa1").getLastRowNum());//190-> index'i veriyor(satir 191 )
         System.out.println(workbook.getSheet("Sayfa1").getPhysicalNumberOfRows());//191->physical olarak kullanilan satiri veriyor
@@ -95,6 +93,7 @@ public class C01_ReadExcel {
         System.out.println(workbook.getSheet("Sheet1").getLastRowNum());//-1
         System.out.println(workbook.getSheet("Sheet1").getPhysicalNumberOfRows());//0
         System.out.println(workbook.getSheet("Sheet1").getFirstRowNum());//-1
+
     }
 
 
