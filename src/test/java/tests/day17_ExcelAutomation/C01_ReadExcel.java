@@ -35,7 +35,7 @@ public class C01_ReadExcel {
         System.out.println(cell);
     }
 
-    @Test
+    @Test(groups = "birinciGrup")
     public void test2() throws IOException {
         //7. Dosya yolunu bir String degiskene atayalim
         String path = "src/test/java/resources/ulkeler.xlsx";

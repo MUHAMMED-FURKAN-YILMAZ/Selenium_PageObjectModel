@@ -21,7 +21,7 @@ public class NegativeTest {
     QAConcortPage qaConcortPage;
 
 
-    @Test
+    @Test(groups = "birinciGrup")
     public void invalidPassword(){
 
         Driver.getDriver().get(ConfigReader.getProperty("CHQAUrl"));
@@ -39,7 +39,7 @@ public class NegativeTest {
 
     }
 
-    @Test(priority = 1)
+    @Test(priority = 1 )
     public void invalidUserName(){
 
         qaConcortPage=new QAConcortPage();

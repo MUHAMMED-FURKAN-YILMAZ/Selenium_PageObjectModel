@@ -18,7 +18,7 @@ public class PozitiveLogInTest {
         QAConcortPage qaConcortPage=new QAConcortPage();
 
         // login butonuna bas
-        qaConcortPage.firstlogInLink.click();
+        qaConcortPage.firstlogInLink.click(); //
 
         //test data username: manager ,
         qaConcortPage.userNameBox.sendKeys(ConfigReader.getProperty("CHQAValidUsername"));
