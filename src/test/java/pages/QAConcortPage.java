@@ -12,7 +12,7 @@ import java.util.List;
 
 public class QAConcortPage {
 
-    WebDriver driver;
+
 
     public QAConcortPage (){
 
