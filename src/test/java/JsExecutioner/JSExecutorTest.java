@@ -9,6 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.JSUtils;
 import utilities.ReusableMethods;
 
 public class JSExecutorTest {
