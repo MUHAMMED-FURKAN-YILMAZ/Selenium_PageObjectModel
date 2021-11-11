@@ -117,6 +117,7 @@ public class QAConcortPage {
     public List<WebElement> besinciSutunListesi;
 
 
+
     public void concortHotelLogin(){
         Driver.getDriver().get(ConfigReader.getProperty("CHQAUrl"));
         QAConcortPage qaConcortPage=new QAConcortPage();

@@ -25,6 +25,8 @@ public class C01_WebTables {
         //  hücredeki(cell) veriyi yazdırmalıdır.
         String actualData=qaConcortPage.printData(3,5);
 
+//********************* //td[.= ‘Ali’]/.. bu xpath ise td'sinde Ali iceren cell'leri dondurur **************
+
         //  2. Ve bu metodu printData() methodunu cagirmak icin kullanin.
         //     Örnek: printData (3,5); => 3. satır, 5. Sütundaki veriyi yazdırmalıdır
 

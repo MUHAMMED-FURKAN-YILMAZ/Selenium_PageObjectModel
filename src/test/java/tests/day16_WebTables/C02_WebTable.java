@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import pages.QAConcortPage;
 import utilities.Driver;
 
-public class C02_WebTables {
+public class C02_WebTable {
 
     @Test
     public void test() throws InterruptedException {
