@@ -67,9 +67,9 @@ public class JSExecutorTest {
         WebElement recentBlog=Driver.getDriver().findElement(By.xpath("//*[.='Recent Blog']"));
 
 //        Getting the coordinates of the element
-        Point coordinates=recentBlog.getLocation();// (933, 3986); x=933(right/left), y= 3986(up/down)
+        Point coordinates=recentBlog.getLocation();// (933, 3986); Common_Exceptions=933(right/left), y= 3986(up/down)
         System.out.println(coordinates.toString());
-//                             window.scrollBy(x coordinate, y coordinate)
+//                             window.scrollBy(Common_Exceptions coordinate, y coordinate)
         je.executeScript("window.scrollBy(0,3986);");//WORKS FINE BUT WE CAN GIVE THE EXACT COORDINATE OF THE ELEMENT
         je.executeScript("window.scrollBy(0,"+coordinates+");");//coordinates.y = Changing the y coordinate
         Thread.sleep(3000);

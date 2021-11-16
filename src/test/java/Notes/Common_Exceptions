@@ -1,0 +1,91 @@
+
+NoSuchElementException
+
+TimeOutException
+
+NullPointerException
+
+WebDriverException
+
+StaleElementReferenceException
+
+ElementNotInteractableException ->smilar staleElement.. for example, There is not a searchBox but you are try to send key.
+
+ElementClickInterceptedException ->This is occurs when the target element that you want to click is overlaid by some other element in the web page.
+
+InvalidArgumentException ->for examle, input is map but you are trying to use diffrent input such as String.. So argument are not matching
+
+InvalidElementStateException
+
+InvalidSelectorException
+
+JavascriptException
+
+RemoteDriverServerException
+
+
+ ***************** NoSuchElementException: **********************
+    Reason:
+-Locater iswrong
+-Element is not on the page because of the iframe or pop up or new window
+-Loading issue-synchronization issue
+-Element is hidden
+
+    Solution:
+-Make sure locatoe is correct
+-Do manuel testing to make sure there is no iframe, pop ups or any other blocked on the page
+-If locator is correct and if we used correct switch(iframe, new window, etc..) then aplly wait
+-Sometimes implicit wait may not be enough to handle specific issue. For example, when we test reservation
+functionality, after clicking save button, we had to put explicit wait to verify the success message on the popup window
+-Try using expilicit wait. It that doesn't work, then try thread.sleep as a last resort
+
+
+ ***************** TimeOutException: **********************
+    Reason:
+-After applying selenium waits, if the element is still not visible after a time is over, then
+ we see TimeOutException
+-Simply put, wait time is over but the commend is not completed
+
+    Solution:
+-Increase the wait time
+-Try using different wait. For example try using javascript executor wait for the page to
+ load. This is also a dynamic wait
+-Try using different wait. For example try using javascript executor wait for the page to
+ load. This is also a dynamic wait
+-Case by case, I prefer different explicit waits to maximize the performance of the
+ automation script
+
+
+ ***************** NullPointerException: **********************
+    Reason:
+-When a variable is created, but not instantiated, when pointer does not show any value
+then we get NullPointerException.
+-It is common to for to initialize the Driver, they we get the exaction. Driver driver;
+but never use driver=new ChromeDriver()
+-For example, in my page object model, I create page objects in test classes but when I forgot to use
+ new keyword to instantiate, then I get the exception
+
+    Solution:
+-Instantiate the variable
+
+
+***************** WebDriverException: **********************
+    Reason:
+-When you close the browser, but still want to use that in correctly
+-When the versions of the driver and browsers are not compatible
+-
+
+    Solution:
+-Your design should be good. We should use singleton Driver to
+ prevent this exception
+-Keep drivers up to date that is compatible with the browser version
+
+
+***************** StaleElementReferenceException: **********************
+    Reason:
+-When the element is no longer fresh on the page and you try to use it
+-When the element is detached from the Dom
+-When the element is removed after session started
+
+    Solution:
+-We might have to relocate the same element again
