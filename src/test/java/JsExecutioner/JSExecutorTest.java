@@ -40,7 +40,7 @@ public class JSExecutorTest {
         Driver.getDriver().get(ConfigReader.getProperty("application_url"));
         WebElement recentBlog=Driver.getDriver().findElement(By.xpath("//*[.='Recent Blog']"));
 //        Scrolling down to the element
-        JSUtils.scrollIntoVIewJS(recentBlog);
+        JSUtils.scrollIntoViewJS(recentBlog);
         //Waiting for recent block for 3 second using explicit wait
         ReusableMethods.waitForVisibility(recentBlog,3);
         Assert.assertEquals(recentBlog.getText(),"Recent Blog");
